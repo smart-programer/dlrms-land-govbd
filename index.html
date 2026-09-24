@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="bn" class="notranslate" translate="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google" content="notranslate">
+  <meta name="googlebot" content="notranslate">
+  <title>DLRMS</title>
+  <meta name="description" content="Digital Land Record Management System">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DLRMS">
+  <meta name="theme-color" content="#0A8FDC">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/e_khotian.png">
+  <link rel="apple-touch-icon" href="assets/e_khotian.png">
+
+  <!-- Google Fonts: Noto Sans Bengali & Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="DlrmsLayout-appMain appMainHor">
+
+    <!-- ==================== Header (AppHeader) ==================== -->
+    <header class="app-bar">
+      
+      <!-- Top Date-Time Bar with Center Gradient -->
+      <div class="top-date-bar">
+        <div class="top-date-gradient">
+          <span class="date-time-label" id="currentBengaliDate">বৃহস্পতিবার, ৮ আশ্বিন ১৪৩৩, ২৪ সেপ্টেম্বর ২০২৬</span>
+        </div>
+      </div>
+
+      <!-- Main Navigation Header -->
+      <div class="header-main-nav">
+        <div class="header-inner">
+          
+          <!-- Logo on the left -->
+          <div class="header-logo-container">
+            <a href="#">
+              <img class="main-logo" src="assets/logo.png" alt="DLRMS logo image">
+            </a>
+          </div>
+
+          <!-- Navigation Links -->
+          <nav class="header-menu-container">
+            <a href="#" class="menu-item">হোম</a>
+
+            <div class="menu-item has-dropdown">
+              <span>আমাদের সম্পর্কে</span>
+              <span class="dropdown-caret">▼</span>
+              <div class="dropdown-popover">
+                <a href="#">প্রকল্প পরিচালক বার্তা</a>
+                <a href="#">উদ্দেশ্য ও লক্ষ্য</a>
+                <a href="#">নাগরিক সুবিধা</a>
+                <a href="#">প্রকল্পের ফলাফল</a>
+                <a href="#">প্রকল্প সারসংক্ষেপ</a>
+              </div>
+            </div>
+
+            <div class="menu-item has-dropdown">
+              <span>জ্ঞাতব্য</span>
+              <span class="dropdown-caret">▼</span>
+              <div class="dropdown-popover">
+                <a href="#">আইন ও বিধি</a>
+                <a href="#">সাধারণ জিজ্ঞাসা</a>
+              </div>
+            </div>
+
+            <a href="#" class="menu-item">পরিপত্র</a>
+            <a href="#" class="menu-item">আবেদনের অবস্থা</a>
+            <a href="#" class="menu-item">নির্দেশিকা</a>
+            <a href="#" class="menu-item">খতিয়ান ও ম্যাপ অনুসন্ধান</a>
+          </nav>
+
+          <!-- Right Buttons: Green Cart Circle & Login Pill -->
+          <div class="header-right-buttons">
+            
+            <!-- Cart Button with Bengali 6 Badge -->
+            <button class="btn-cart" title="কার্ট">
+              <svg viewBox="0 0 24 24">
+                <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+              </svg>
+              <span class="cart-badge">৬</span>
+            </button>
+
+            <!-- Login Pill Button -->
+            <button class="btn-login-pill" id="loginBtn">
+              <span>লগইন</span>
+              <span class="login-caret">▼</span>
+            </button>
+
+            <!-- Mobile Menu Toggle (3 Vertical Dots) -->
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="#222">
+                <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+              </svg>
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-box">
+        <div class="drawer-header">
+          <img src="assets/logo.png" alt="DLRMS" style="height: 38px;">
+          <button class="drawer-close" id="drawerClose">&times;</button>
+        </div>
+        <div class="drawer-links">
+          <a href="#">হোম</a>
+          <a href="#">আমাদের সম্পর্কে</a>
+          <a href="#">জ্ঞাতব্য</a>
+          <a href="#">পরিপত্র</a>
+          <a href="#">আবেদনের অবস্থা</a>
+          <a href="#">নির্দেশিকা</a>
+          <a href="#">খতিয়ান ও ম্যাপ অনুসন্ধান</a>
+          <a href="https://citizen.land.gov.bd" target="_blank" style="color: #048340; font-weight: 700;">লগইন</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== Main Content ==================== -->
+    <main class="DlrmsLayout-mainContent">
+      <div class="DlrmsLayout-mainContainer">
+        
+        <!-- Authentic KhatianView Wrapper -->
+        <div class="KhatianView-container">
+          <div class="KhatianView-stackWrapper">
+            
+            <h5 class="KhatianView-headerText" id="khatianHeader">খতিয়ান নং - ১৮২২</h5>
+            
+            <table>
+              <tbody>
+                <tr>
+                  <td>মালিক</td>
+                  <td>:</td>
+                  <td id="khatianOwner">কোহিনুর বেগম, মোছাঃ জেসমিন</td>
+                </tr>
+                <tr>
+                  <td>দাগ নং</td>
+                  <td>:</td>
+                  <td id="khatianDag">1290</td>
+                </tr>
+                <tr>
+                  <td>সার্ভে</td>
+                  <td>:</td>
+                  <td id="khatianSurvey">নামজারি</td>
+                </tr>
+                <tr>
+                  <td>মৌজা</td>
+                  <td>:</td>
+                  <td id="khatianMouza">ছোট বয়রা</td>
+                </tr>
+                <tr>
+                  <td>উপজেলা</td>
+                  <td>:</td>
+                  <td id="khatianUpazila">খুলনা সদর রাজস্ব সার্কেল</td>
+                </tr>
+                <tr>
+                  <td>জেলা</td>
+                  <td>:</td>
+                  <td id="khatianDistrict">খুলনা</td>
+                </tr>
+                <tr>
+                  <td>বিভাগ</td>
+                  <td>:</td>
+                  <td id="khatianDivision">খুলনা</td>
+                </tr>
+                <tr>
+                  <td>তারিখ</td>
+                  <td>:</td>
+                  <td id="khatianDate">২৩ সেপ্টেম্বর ২০২৬</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- ==================== Floating Chatbot ==================== -->
+    <div class="app-chatbot-container">
+      <div class="chatbot-window" id="chatbotWindow">
+        <div class="react-chatbot-kit-chat-header">
+          <span>স্মার্ট ভূমি সহকারী</span>
+          <button class="chat-close-btn" id="chatCloseBtn">&times;</button>
+        </div>
+        <div class="react-chatbot-kit-chat-message-container" id="chatContainer">
+          <div class="chat-message bot-message">
+            <span>আসসালামু আলাইকুম! ভূমি রেকর্ড ও জরিপ সংক্রান্ত তথ্যের জন্য স্বাগতম। আপনি কি জানতে চান?</span>
+          </div>
+          <div class="quick-chips">
+            <button onclick="sendQuickMessage('খতিয়ান ভেরিফিকেশন কীভাবে হয়?')">খতিয়ান ভেরিফিকেশন কীভাবে হয়?</button>
+            <button onclick="sendQuickMessage('সার্টিফাইড কপি পাওয়ার নিয়ম')">সার্টিফাইড কপি পাওয়ার নিয়ম</button>
+            <button onclick="sendQuickMessage('১৬১২২ হেল্পলাইন তথ্য')">১৬১২২ হেল্পলাইন তথ্য</button>
+          </div>
+        </div>
+        <div class="react-chatbot-kit-chat-input-container">
+          <input type="text" class="react-chatbot-kit-chat-input" id="chatInput" placeholder="এখানে লিখুন...">
+          <button class="chat-submit-btn" id="chatSendBtn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="white">
+              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <button class="chatbot-floating-btn" id="chatbotBtn" aria-label="Chatbot">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.17L4 17.17V4H20V16Z" fill="white"/>
+          <path d="M7 9H17M7 13H14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- ==================== Footer (DlrmsFooter) ==================== -->
+    <footer class="DlrmsFooter-root">
+      
+      <!-- Top Green Accent Bar -->
+      <div class="DlrmsFooter-gradiantBox"></div>
+
+      <!-- Main Footer Body (Pastel Green) -->
+      <div class="DlrmsFooter-mainContent">
+        <div class="footer-grid-container">
+          
+          <!-- Column 1: Important Links (Two Sub-Columns) -->
+          <div class="footer-col-links">
+            <h5 class="DlrmsFooter-sectionTitle">গুরুত্বপূর্ণ লিঙ্ক</h5>
+            <div class="footer-links-two-cols">
+              <ul class="footer-link-sublist">
+                <li>
+                  <a href="https://bangladesh.gov.bd" target="_blank" class="DlrmsFooter-itemLink">
+                    <span class="item-arrow">▶</span>
+                    <span>বাংলাদেশ জাতীয় তথ্য বাতায়ন</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://minland.gov.bd" target="_blank" class="DlrmsFooter-itemLink">
+                    <span class="item-arrow">▶</span>
+                    <span>ভূমি মন্ত্রণালয়</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://pressinform.gov.bd" target="_blank" class="DlrmsFooter-itemLink">
+                    <span class="item-arrow">▶</span>
+                    <span>তথ্য অধিদফতর (পিআইডি)</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.grs.gov.bd/" target="_blank" class="DlrmsFooter-itemLink">
+                    <span class="item-arrow">▶</span>
+                    <span>অভিযোগ প্রতিকার ব্যবস্থা</span>
+                  </a>
+                </li>
+              </ul>
+              
+              <ul class="footer-link-sublist">
+                <li>
+                  <a href="https://portal-citizen.land.gov.bd/nagorik-corner/support-search" target="_blank" class="DlrmsFooter-itemLink">
+                    <span class="item-arrow">▶</span>
+                    <span>সাপোর্ট টিকেট</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="DlrmsFooter-itemLink">
+                    <span class="item-arrow">▶</span>
+                    <span>গোপনীয়তা নীতি</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="DlrmsFooter-itemLink">
+                    <span class="item-arrow">▶</span>
+                    <span>সাধারণ জিজ্ঞাসা</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="DlrmsFooter-itemLink">
+                    <span class="item-arrow">▶</span>
+                    <span>যোগাযোগ</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Column 2: In Implementation (LMAP Official Combined Logo) -->
+          <div class="footer-col-implementation">
+            <h5 class="DlrmsFooter-sectionTitle">পরিকল্পনা ও বাস্তবায়নে</h5>
+            <a href="https://lmap.minland.gov.bd/" target="_blank" rel="noopener noreferrer" class="lmap-link">
+              <img src="assets/lmap_logo.png" alt="ভূমি ব্যবস্থাপনা অটোমেশন প্রকল্প" class="implementation-logo-img">
+            </a>
+          </div>
+
+          <!-- Column 3: Google Play App Badge -->
+          <div class="footer-col-app">
+            <a href="https://play.google.com/store/apps/details?id=com.softbdltd.eKhatian" target="_blank" rel="noopener noreferrer">
+              <img src="assets/g-play.png" alt="Get it on Google Play" class="footer-gplay-img">
+            </a>
+          </div>
+
+          <!-- Column 5: Mobile Technical Support (Shown in 2x2 grid on mobile) -->
+          <div class="footer-col-tech-mobile">
+            <h5 class="DlrmsFooter-sectionTitle">কারিগরি সহায়তায়</h5>
+            <a href="https://softbdltd.com/" target="_blank" rel="noopener noreferrer">
+              <img src="assets/softbd.png" alt="SoftBD Ltd." class="softbd-footer-logo-mobile">
+            </a>
+          </div>
+
+          <!-- Column 4: Social Media + Floating Fast Actions -->
+          <div class="footer-col-social">
+            <h5 class="DlrmsFooter-sectionTitle" style="color: #000000;">সামাজিক যোগাযোগ</h5>
+            <div class="DlrmsFooter-footerSocial">
+              <a href="https://facebook.com/MinlandGovBd" target="_blank" title="Facebook">
+                <img src="assets/facebook.png" alt="Facebook">
+              </a>
+              <a href="https://x.com/MinlandGovBd" target="_blank" title="X">
+                <img src="assets/x.png" alt="X">
+              </a>
+              <a href="https://instagram.com/minlandgovbd" target="_blank" title="Instagram">
+                <img src="assets/instagram.png" alt="Instagram">
+              </a>
+              <a href="https://youtube.com/@minland-gov-bd" target="_blank" title="YouTube">
+                <img src="assets/youtube.png" alt="YouTube">
+              </a>
+            </div>
+
+            <!-- Scroll-to-Top and Inline Chatbot Button -->
+            <div class="footer-action-icons">
+              <button class="footer-scroll-top-btn" id="scrollTopBtn" title="উপরে যান">
+                ↑
+              </button>
+              <button class="footer-chat-btn" id="footerChatBtn" title="সহায়তা">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="white">
+                  <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Technical Support White Curved Pill Container on Bottom Right -->
+        <div class="footer-technical-support-wrapper">
+          <div class="technical-support-pill">
+            <span class="tech-support-label">কারিগরি সহায়তায়:</span>
+            <a href="https://softbdltd.com/" target="_blank" rel="noopener noreferrer">
+              <img src="assets/softbd.png" alt="SoftBD Ltd." class="softbd-footer-logo">
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Full Width Copyright Strip -->
+      <div class="footer-copyright-banner">
+        ©২০২৬ ভূমি ব্যবস্থাপনা অটোমেশন প্রকল্প
+      </div>
+
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

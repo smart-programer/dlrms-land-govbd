@@ -1,0 +1,1059 @@
+/* ==========================================================================
+   DLRMS (Digital Land Record Management System) - land.gov.bd
+   100% Authentic Clone Stylesheet matching MUI Next.js Production Build
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans Bengali', 'Roboto', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  background-color: #F5F6FA;
+  color: rgba(0, 0, 0, 0.87);
+  -webkit-font-smoothing: antialiased;
+  top: 0px !important;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Disable Google Translate UI / Popups */
+.skiptranslate,
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* ==========================================================================
+   Main Application Layout (DlrmsLayout)
+   ========================================================================== */
+.DlrmsLayout-appMain {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #F5F6FA;
+}
+
+/* ==========================================================================
+   Header & Navigation (Matching Official DLRMS AppHeader)
+   ========================================================================== */
+.app-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  box-shadow: 4px 3px 4px 0px rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Authentic Centered Gradient Top Date Bar */
+.top-date-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  padding-top: 0;
+}
+
+.top-date-gradient {
+  background: linear-gradient(to left, #ffffff 0%, #075e24 50%, #ffffff 100%);
+  text-align: center;
+  color: #ffffff;
+  padding: 0 20px;
+  width: calc(100% - 150px);
+  height: 30px;
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.date-time-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+}
+
+/* Main Navigation Bar Row - Sleek & Compact matching original */
+.header-main-nav {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  background: #ffffff;
+}
+
+.header-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo on Far Left */
+.header-logo-container {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.header-logo-container a {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo-container img.main-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  position: relative;
+  top: -5mm;
+  z-index: 10;
+}
+
+/* Center Navigation Menu Items */
+.header-menu-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: auto;
+  margin-right: 24px;
+}
+
+.menu-item {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #222222;
+  position: relative;
+  cursor: pointer;
+  padding: 6px 2px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+
+.menu-item:hover {
+  color: #048340;
+}
+
+.menu-item .dropdown-caret {
+  font-size: 9px;
+  color: #222222;
+  transition: transform 0.2s ease;
+}
+
+.menu-item:hover .dropdown-caret {
+  transform: rotate(180deg);
+  color: #048340;
+}
+
+.dropdown-popover {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 190px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 8px 0;
+  z-index: 1200;
+  border: 1px solid #ebebeb;
+}
+
+.has-dropdown:hover .dropdown-popover {
+  display: block;
+}
+
+.dropdown-popover a {
+  display: block;
+  padding: 8px 16px;
+  font-size: 13.5px;
+  color: #333333;
+  font-weight: 500;
+}
+
+.dropdown-popover a:hover {
+  background-color: #f0fdf4;
+  color: #048340;
+}
+
+/* Right Buttons: Cart Circle & Login Pill */
+.header-right-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Circular Green Cart Button with Red Notification Badge */
+.btn-cart {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #048340;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ffffff;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  flex-shrink: 0;
+}
+
+.btn-cart:hover {
+  background-color: #075e24;
+  transform: scale(1.05);
+}
+
+.btn-cart svg {
+  width: 16px;
+  height: 16px;
+  fill: #ffffff;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: #d32f2f;
+  color: #ffffff;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border: 1.5px solid #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Rounded Pill Login Button */
+.btn-login-pill {
+  background-color: #075e24;
+  color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  padding: 4px 13px;
+  font-size: 13.5px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-login-pill:hover {
+  background-color: #048340;
+}
+
+.btn-login-pill .login-caret {
+  font-size: 8px;
+  color: #ffffff;
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #222222;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2000;
+}
+
+.mobile-drawer-box {
+  background: #ffffff;
+  width: 270px;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.drawer-close {
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.drawer-links a {
+  display: block;
+  padding: 10px 0;
+  font-size: 15px;
+  color: #333;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+/* ==========================================================================
+   Main Content Area
+   ========================================================================== */
+.DlrmsLayout-mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 16px 40px 16px;
+  min-height: 480px;
+}
+
+.DlrmsLayout-mainContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Exact KhatianView Component (Matching chunk 3871)
+   ========================================================================== */
+.KhatianView-container {
+  margin-top: calc(5px + 1cm);
+  margin-bottom: 7cm;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.KhatianView-stackWrapper {
+  background: #ffffff;
+  box-shadow: 0px 0px 5px 2px #e3e3e3;
+  border-radius: 5px;
+  width: 400px;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.KhatianView-headerText {
+  font-weight: 700;
+  color: #048340;
+  font-size: 20px;
+  line-height: 1.334;
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+.KhatianView-stackWrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.KhatianView-stackWrapper tr td:first-child {
+  font-weight: 700;
+  color: #000000;
+  white-space: nowrap;
+  width: 75px;
+}
+
+.KhatianView-stackWrapper td {
+  padding: 4px 3px;
+  vertical-align: top;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.KhatianView-stackWrapper tr td:nth-child(2) {
+  width: 14px;
+  text-align: center;
+  font-weight: 700;
+  color: #000000;
+}
+
+.KhatianView-stackWrapper td:last-child {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  text-overflow: ellipsis;
+  max-width: 300px;
+  font-weight: 400;
+  color: #000000;
+}
+
+/* ==========================================================================
+   Floating Chatbot Component (Matching live react-chatbot-kit)
+   ========================================================================== */
+.app-chatbot-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+}
+
+.chatbot-floating-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #3f51b5;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.chatbot-floating-btn:hover {
+  background-color: #303f9f;
+  transform: scale(1.05);
+}
+
+.chatbot-window {
+  display: none;
+  position: absolute;
+  bottom: 64px;
+  right: 0;
+  width: 330px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px 2px #c1c1c1;
+  overflow: hidden;
+}
+
+.react-chatbot-kit-chat-header {
+  background: #048340;
+  color: #ffffff;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-close-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.react-chatbot-kit-chat-message-container {
+  background: linear-gradient(180deg, #FEFFFD 0%, #E9FFDC 99.99%);
+  padding: 14px;
+  height: 220px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-message {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.4;
+  max-width: 85%;
+}
+
+.bot-message {
+  background-color: #ffffff;
+  color: #333;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  align-self: flex-start;
+}
+
+.user-message {
+  background-color: #048340;
+  color: #ffffff;
+  align-self: flex-end;
+}
+
+.quick-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.quick-chips button {
+  background: #ffffff;
+  border: 1px solid #bbf7d0;
+  color: #075e24;
+  padding: 6px 10px;
+  border-radius: 14px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.quick-chips button:hover {
+  background: #f0fdf4;
+}
+
+.react-chatbot-kit-chat-input-container {
+  background: #efefef;
+  padding: 8px 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.react-chatbot-kit-chat-input {
+  flex: 1;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  font-size: 13px;
+  outline: none;
+  background: #ffffff;
+}
+
+.chat-submit-btn {
+  background: #048340;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Footer Component (DlrmsFooter matching 7951 chunk)
+   ========================================================================== */
+.DlrmsFooter-root {
+  width: 100%;
+  margin-top: auto;
+  background-color: #ffffff;
+}
+
+.DlrmsFooter-gradiantBox {
+  background: linear-gradient(to left, #ffffff 0%, #048340 50%, #ffffff 100%);
+  height: 20px;
+  width: 100%;
+}
+
+.DlrmsFooter-mainContent {
+  background: #e4ffe2;
+  padding-top: 32px;
+  padding-bottom: 0px;
+  position: relative;
+}
+
+.footer-grid-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.DlrmsFooter-sectionTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #075e24;
+  margin-bottom: 12px;
+}
+
+/* Two Sub-Columns for Important Links */
+.footer-col-links {
+  flex: 0 0 auto;
+}
+
+.footer-links-two-cols {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-link-sublist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-link-sublist li {
+  margin-bottom: 8px;
+}
+
+.DlrmsFooter-itemLink {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13.5px;
+  color: #222222;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.DlrmsFooter-itemLink:hover {
+  color: #048340;
+}
+
+.DlrmsFooter-itemLink .item-arrow {
+  color: #075e24;
+  font-size: 10px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* Implementation Column */
+.footer-col-implementation {
+  flex: 0 0 auto;
+}
+
+.implementation-logo-img {
+  height: 54px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Google Play App Column */
+.footer-col-app {
+  flex: 0 0 auto;
+  padding-top: 26px;
+}
+
+.footer-gplay-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.footer-gplay-img:hover {
+  transform: scale(1.03);
+}
+
+/* Social Media Column */
+.footer-col-social {
+  flex: 0 0 auto;
+}
+
+.DlrmsFooter-footerSocial {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.DlrmsFooter-footerSocial a {
+  display: inline-flex;
+  align-items: center;
+}
+
+.DlrmsFooter-footerSocial img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 4px;
+  transition: transform 0.15s ease;
+}
+
+.DlrmsFooter-footerSocial img:hover {
+  transform: translateY(-2px);
+}
+
+/* Scroll-to-top & Footer Chat Buttons */
+.footer-action-icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.footer-scroll-top-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #048340;
+  color: #ffffff;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.footer-scroll-top-btn:hover {
+  background-color: #075e24;
+  transform: translateY(-2px);
+}
+
+.footer-chat-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #3f51b5;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.footer-chat-btn:hover {
+  background-color: #303f9f;
+  transform: translateY(-2px);
+}
+
+/* Technical Support White Curved Pill Container on Bottom Right */
+.footer-technical-support-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.technical-support-pill {
+  background-color: #ffffff;
+  border-top-left-radius: 40px;
+  padding: 6px 36px 6px 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: -2px -1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.tech-support-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.softbd-footer-logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Bottom Full-Width Copyright Banner */
+.footer-copyright-banner {
+  background-color: #ffffff;
+  color: #222222;
+  font-size: 13px;
+  padding: 8px 32px;
+  text-align: left;
+  border-top: 1px solid #eaeaea;
+}
+
+/* Mobile Technical Support Column (Hidden on desktop) */
+.footer-col-tech-mobile {
+  display: none;
+}
+
+.softbd-footer-logo-mobile {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .header-menu-container {
+    gap: 14px;
+  }
+  .menu-item {
+    font-size: 13.5px;
+  }
+}
+
+@media (max-width: 992px) {
+  .header-menu-container {
+    display: none;
+  }
+  .btn-login-pill {
+    display: none;
+  }
+  .mobile-toggle {
+    display: flex;
+  }
+  .top-date-gradient {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-date-bar {
+    padding: 0;
+  }
+  .top-date-gradient {
+    width: 100%;
+    padding: 2px 8px;
+    height: 28px;
+    min-height: 28px;
+  }
+  .date-time-label {
+    font-size: 12px;
+  }
+  .header-main-nav {
+    height: 52px;
+    padding: 0 16px;
+  }
+  .header-logo-container img.main-logo {
+    height: 42px;
+    top: -2mm;
+  }
+
+  /* Khatian Card Spacing on Mobile: Directly above footer matching official screenshot */
+  .DlrmsLayout-mainContent {
+    padding: 0 16px 20px 16px;
+    min-height: auto;
+  }
+  .KhatianView-container {
+    margin-top: 18px;
+    margin-bottom: 24px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .KhatianView-stackWrapper {
+    width: 100%;
+    max-width: 360px;
+    padding: 18px 16px;
+    box-shadow: 0px 0px 6px 1px #e3e3e3;
+  }
+  .KhatianView-headerText {
+    font-size: 19px;
+    margin-bottom: 14px;
+  }
+  .KhatianView-stackWrapper td {
+    padding: 3.5px 2px;
+    font-size: 14px;
+  }
+
+  /* Footer on Mobile matching user screenshot 1:
+     Row 1: গুরুত্বপূর্ণ লিঙ্ক (span 2)
+     Row 2: Left = পরিকল্পনা ও বাস্তবায়নে, Right = সামাজিক যোগাযোগ
+     Row 3: Left = Google Play, Right = কারিগরি সহায়তায় */
+  .DlrmsFooter-mainContent {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .footer-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 24px;
+    padding: 0 16px;
+    max-width: 100%;
+  }
+  .footer-col-links {
+    grid-row: 1;
+    grid-column: 1 / -1;
+  }
+  .DlrmsFooter-sectionTitle {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #075e24;
+  }
+  .footer-links-two-cols {
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  .footer-link-sublist {
+    flex: 1 1 auto;
+  }
+  .footer-link-sublist:first-child {
+    max-width: 58%;
+  }
+  .footer-link-sublist:last-child {
+    max-width: 42%;
+  }
+  .footer-link-sublist li {
+    margin-bottom: 10px;
+  }
+  .DlrmsFooter-itemLink {
+    font-size: 12.5px;
+    line-height: 1.35;
+    gap: 6px;
+    white-space: nowrap;
+  }
+  .DlrmsFooter-itemLink .item-arrow {
+    color: #075e24;
+    font-size: 10px;
+  }
+
+  /* Row 2 Left: পরিকল্পনা ও বাস্তবায়নে */
+  .footer-col-implementation {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  .footer-col-implementation .DlrmsFooter-sectionTitle {
+    color: #000000;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .implementation-logo-img {
+    height: 46px;
+  }
+
+  /* Row 2 Right: সামাজিক যোগাযোগ */
+  .footer-col-social {
+    grid-row: 2;
+    grid-column: 2;
+  }
+  .footer-col-social .DlrmsFooter-sectionTitle {
+    color: #000000;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .DlrmsFooter-footerSocial {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 120px;
+    gap: 8px;
+    margin-bottom: 0;
+  }
+  .DlrmsFooter-footerSocial img {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Row 3 Left: Google Play */
+  .footer-col-app {
+    grid-row: 3;
+    grid-column: 1;
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+  }
+  .footer-gplay-img {
+    height: 38px;
+  }
+
+  /* Row 3 Right: কারিগরি সহায়তায় */
+  .footer-col-tech-mobile {
+    display: block;
+    grid-row: 3;
+    grid-column: 2;
+    padding-right: 24px;
+  }
+  .footer-col-tech-mobile .DlrmsFooter-sectionTitle {
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #000000;
+  }
+  .softbd-footer-logo-mobile {
+    height: 26px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .footer-technical-support-wrapper {
+    display: none;
+  }
+  .footer-action-icons {
+    display: none;
+  }
+  .footer-copyright-banner {
+    padding: 10px 18px;
+    font-size: 12px;
+    text-align: left;
+  }
+
+  /* Chatbot Window & Button sizing on Mobile */
+  .app-chatbot-container {
+    bottom: 80px;
+    right: 16px;
+  }
+  .chatbot-floating-btn {
+    width: 48px;
+    height: 48px;
+  }
+  .chatbot-window {
+    width: calc(100vw - 32px);
+    max-width: 340px;
+    right: 0;
+    bottom: 60px;
+  }
+}
+
+@media (max-width: 360px) {
+  .date-time-label {
+    font-size: 11px;
+  }
+  .footer-grid-container {
+    column-gap: 10px;
+    padding: 0 12px;
+  }
+  .DlrmsFooter-itemLink {
+    font-size: 12px;
+  }
+  .implementation-logo-img {
+    height: 42px;
+  }
+  .footer-gplay-img {
+    height: 34px;
+  }
+}

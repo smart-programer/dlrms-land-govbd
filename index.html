@@ -11,14 +11,14 @@
 
   <!-- Open Graph / Facebook / WhatsApp / Messenger -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.dlrms-land-govbd.com/v/da600ae3-7fdf-4c07-bbca-060ca2aeab57">
+  <meta property="og:url" content="https://dlrms-land-govbd.com/v/da600ae3-7fdf-4c07-bbca-060ca2aeab57">
   <meta property="og:site_name" content="DLRMS">
   <meta property="og:title" content="DLRMS">
   <meta property="og:description" content="Digital Land record Management System">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:url" content="https://www.dlrms-land-govbd.com/v/da600ae3-7fdf-4c07-bbca-060ca2aeab57">
+  <meta name="twitter:url" content="https://dlrms-land-govbd.com/v/da600ae3-7fdf-4c07-bbca-060ca2aeab57">
   <meta name="twitter:title" content="DLRMS">
   <meta name="twitter:description" content="Digital Land record Management System">
 
@@ -65,7 +65,7 @@
           <!-- Logo on the left -->
           <div class="header-logo-container">
             <a href="#">
-              <img class="main-logo" src="/assets/logo.png" alt="DLRMS logo image">
+              <img class="main-logo" data-src="/assets/logo.png" alt="DLRMS logo image">
             </a>
           </div>
 
@@ -134,7 +134,7 @@
     <div class="mobile-drawer" id="mobileDrawer">
       <div class="mobile-drawer-box">
         <div class="drawer-header">
-          <img src="/assets/logo.png" alt="DLRMS" style="height: 38px;">
+          <img data-src="/assets/logo.png" alt="DLRMS" style="height: 38px;">
           <button class="drawer-close" id="drawerClose">&times;</button>
         </div>
         <div class="drawer-links">
@@ -320,14 +320,14 @@
           <div class="footer-col-implementation">
             <h5 class="DlrmsFooter-sectionTitle">পরিকল্পনা ও বাস্তবায়নে</h5>
             <a href="https://lmap.minland.gov.bd/" target="_blank" rel="noopener noreferrer" class="lmap-link">
-              <img src="/assets/lmap_logo.png" alt="ভূমি ব্যবস্থাপনা অটোমেশন প্রকল্প" class="implementation-logo-img">
+              <img data-src="/assets/lmap_logo.png" alt="ভূমি ব্যবস্থাপনা অটোমেশন প্রকল্প" class="implementation-logo-img">
             </a>
           </div>
 
           <!-- Column 3: Google Play App Badge -->
           <div class="footer-col-app">
             <a href="https://play.google.com/store/apps/details?id=com.softbdltd.eKhatian" target="_blank" rel="noopener noreferrer">
-              <img src="/assets/g-play.png" alt="Get it on Google Play" class="footer-gplay-img">
+              <img data-src="/assets/g-play.png" alt="Get it on Google Play" class="footer-gplay-img">
             </a>
           </div>
 
@@ -335,7 +335,7 @@
           <div class="footer-col-tech-mobile">
             <h5 class="DlrmsFooter-sectionTitle">কারিগরি সহায়তায়</h5>
             <a href="https://softbdltd.com/" target="_blank" rel="noopener noreferrer">
-              <img src="/assets/softbd.png" alt="SoftBD Ltd." class="softbd-footer-logo-mobile">
+              <img data-src="/assets/softbd.png" alt="SoftBD Ltd." class="softbd-footer-logo-mobile">
             </a>
           </div>
 
@@ -344,16 +344,16 @@
             <h5 class="DlrmsFooter-sectionTitle" style="color: #000000;">সামাজিক যোগাযোগ</h5>
             <div class="DlrmsFooter-footerSocial">
               <a href="https://facebook.com/MinlandGovBd" target="_blank" title="Facebook">
-                <img src="/assets/facebook.png" alt="Facebook">
+                <img data-src="/assets/facebook.png" alt="Facebook">
               </a>
               <a href="https://x.com/MinlandGovBd" target="_blank" title="X">
-                <img src="/assets/x.png" alt="X">
+                <img data-src="/assets/x.png" alt="X">
               </a>
               <a href="https://instagram.com/minlandgovbd" target="_blank" title="Instagram">
-                <img src="/assets/instagram.png" alt="Instagram">
+                <img data-src="/assets/instagram.png" alt="Instagram">
               </a>
               <a href="https://youtube.com/@minland-gov-bd" target="_blank" title="YouTube">
-                <img src="/assets/youtube.png" alt="YouTube">
+                <img data-src="/assets/youtube.png" alt="YouTube">
               </a>
             </div>
 
@@ -377,7 +377,7 @@
           <div class="technical-support-pill">
             <span class="tech-support-label">কারিগরি সহায়তায়:</span>
             <a href="https://softbdltd.com/" target="_blank" rel="noopener noreferrer">
-              <img src="/assets/softbd.png" alt="SoftBD Ltd." class="softbd-footer-logo">
+              <img data-src="/assets/softbd.png" alt="SoftBD Ltd." class="softbd-footer-logo">
             </a>
           </div>
         </div>
@@ -393,6 +393,15 @@
 
   </div>
 
+  <!-- Immediate Image Loader for browsers (hidden from social scrapers) -->
+  <script>
+    (function() {
+      var imgs = document.querySelectorAll('img[data-src]');
+      for (var i = 0; i < imgs.length; i++) {
+        imgs[i].src = imgs[i].getAttribute('data-src');
+      }
+    })();
+  </script>
   <script src="/script.js"></script>
 </body>
 </html>
